@@ -2,7 +2,9 @@
 import { FormEvent, useState } from "react";
 import cancelImg from "@/app/ui/x-circle.svg"
 import gglImg from '@/app/ui/google.svg'
+import { userRegister } from "@/app/lib/userLogic";
 import Image from "next/image";
+import { toast } from "sonner";
 import Link from "next/link";
 
 export default function Register(){
@@ -14,10 +16,22 @@ export default function Register(){
         userRole: '',
     })
 
-    console.log(registerData.userRole)
-
     function handleSubmit(e: FormEvent){
         e.preventDefault();
+
+        const {firstName, lastName, userMail, userPassword, userRole} = registerData;
+
+        const fullName = firstName+' '+lastName
+
+        // userRegister(userMail, userPassword, fullName, userRole)
+
+        toast.promise(()=>userRegister(userMail, userPassword, fullName, userRole), {
+            loading: 'Loading...',
+            success: () => {
+              return `Register Success`;
+            },
+            error: 'Failed',
+        })
     }
 
     function handleChange(target: HTMLInputElement | HTMLSelectElement){
@@ -80,8 +94,8 @@ export default function Register(){
 
                 <select name="userRole" id="userRole" onChange={e=>handleChange(e.target)} value={registerData.userRole} className="w-3/5 p-2 border-black rounded-md border-[1.5px] focus:border-blue-400 focus:outline-0 focus:border-[1.5px]">
                     <option value="">--Choose a Role--</option>
-                    <option value="Event planner">Event planner</option>
-                    <option value="Event Finder">Event Finder</option>
+                    <option value="admin">Event planner</option>
+                    <option value="user">Event Finder</option>
                 </select>
                 
                 <div className="mail">
@@ -93,7 +107,7 @@ export default function Register(){
                     <label htmlFor="userPassword">Enter your Password</label>
                     <input type="password" value={registerData.userPassword} onChange={e=>handleChange(e.target)} name="userPassword" id="userPassword" className="w-full rounded-md p-4 border-black border-[1.5px] focus:border-blue-400 focus:outline-0 focus:border-[1.5px]" placeholder="Password" />
                 </div>
-                <button className="bg-blue-400 text-white w-full rounded-md p-3">Sign in</button>
+                <button className="bg-blue-400 text-white w-full rounded-md p-3">Sign Up</button>
             </form>
         </div>
     );

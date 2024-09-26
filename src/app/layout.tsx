@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { Toaster } from 'sonner';
 import { Montserrat, } from "next/font/google";
 import "./globals.css";
 import NavBar from "./ui/components/NavBar";
@@ -36,6 +37,7 @@ export default function RootLayout({
       <body className={`${inter.className}`}>
         <NavBar />
         {children}
+        <Toaster />
       </body>
     </html>
   );

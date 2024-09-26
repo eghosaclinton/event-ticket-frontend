@@ -3,6 +3,8 @@ import { FormEvent, useState } from "react";
 import cancelImg from "@/app/ui/x-circle.svg"
 import gglImg from '@/app/ui/google.svg'
 import Image from "next/image";
+import { toast } from 'sonner';
+import { userLogIn } from "../../lib/userLogic";
 import Link from "next/link";
 
 // type Props = {
@@ -18,6 +20,16 @@ export default function Login(){
 
     function handleSubmit(e: FormEvent){
         e.preventDefault();
+
+        const {userEmail, userPassword} = logInData
+
+        toast.promise(async()=>await userLogIn(userEmail, userPassword), {
+            loading: 'Loading...',
+            success: () => {
+              return `Login Success`;
+            },
+            error: 'Error',
+          })
     }
 
     function handleChange(target: HTMLInputElement){
