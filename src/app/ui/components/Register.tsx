@@ -1,7 +1,7 @@
 "use client";
 import { FormEvent, useState } from "react";
-import cancelImg from "@/app/ui/x-circle.svg"
-import gglImg from '@/app/ui/google.svg'
+import cancelImg from "@/app/ui/assets/x-circle.svg"
+import gglImg from '@/app/ui/assets/google.svg'
 import { userRegister } from "@/app/lib/userLogic";
 import Image from "next/image";
 import { toast } from "sonner";

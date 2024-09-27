@@ -3,6 +3,7 @@ import { Toaster } from 'sonner';
 import { Montserrat, } from "next/font/google";
 import "./globals.css";
 import NavBar from "./ui/components/NavBar";
+import Footer from "./ui/components/Footer";
 // import { userLogOut, userLogIn, userRegister} from '@/app/lib/userLogic'
 
 // const geistSans = localFont({
@@ -36,7 +37,10 @@ export default function RootLayout({
       </head>
       <body className={`${inter.className}`}>
         <NavBar />
-        {children}
+        <main>
+          {children}
+        </main>
+        <Footer />
         <Toaster />
       </body>
     </html>

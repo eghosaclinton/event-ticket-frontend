@@ -1,10 +1,5 @@
-const URL = ``
-
-
-
-
 function userOnBoard(){
-        
+        console.log('userOnboarded')
 }
 
 export async function userLogIn(email: string, password: string){
@@ -26,7 +21,7 @@ export async function userLogIn(email: string, password: string){
         } catch (error) {
             console.error(error)
         }
-        // userOnBoard()
+        userOnBoard()
 }
 
 export function userLogOut(){
