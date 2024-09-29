@@ -34,13 +34,13 @@ export default function NavBar(){
                     <div className="profile flex gap-2">
                         <Link href={'/login'}>
                             <button
-                                className="bg-blue-400 text-white rounded-3xl font-semibold py-2 px-9"
+                                className="bg-blue-400 text-white rounded-full font-semibold py-2 px-9"
                             >Login</button>
                         </Link>
 
                         <Link href={'/register'}>
                             <button
-                                className="bg-transparent border-[1.5px] rounded-3xl py-2 px-9 border-white text-white"
+                                className="bg-transparent border-[1.5px] rounded-full py-2 px-9 border-white text-white"
                             
                             >
                                 Register
