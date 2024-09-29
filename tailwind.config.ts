@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+// import R from '@/app/ui/assets/Rectangle 5.svg'
 
 const config: Config = {
   content: [

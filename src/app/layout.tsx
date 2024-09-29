@@ -35,7 +35,7 @@ export default function RootLayout({
         <link rel="shortcut icon" href='../public/favicon.ico' type="image/x-icon" />
         <title>SnapEvent</title>
       </head>
-      <body className={`${inter.className}`}>
+      <body className={`${inter.className} flex flex-col gap-4`}>
         <NavBar />
         <main>
           {children}

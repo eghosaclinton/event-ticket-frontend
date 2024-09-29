@@ -21,7 +21,7 @@ export default function Login(){
     function handleSubmit(e: FormEvent){
         e.preventDefault();
 
-        const {userEmail, userPassword} = logInData
+        const {userEmail, userPassword} = logInData;
 
         toast.promise(async()=>await userLogIn(userEmail, userPassword), {
             loading: 'Loading...',
@@ -29,7 +29,9 @@ export default function Login(){
               return `Login Success`;
             },
             error: 'Error',
-          })
+        })
+        const data = userLogIn(userEmail, userPassword).then(data=>data?.json)
+        console.log(data)
     }
 
     function handleChange(target: HTMLInputElement){
@@ -46,7 +48,7 @@ export default function Login(){
     return (
         <div className="w-2/5 mx-auto my-0 rounded relative p-5 flex flex-col gap-5 bg-white">
             <Link href={'/'}>
-                <button
+                <button 
                     className="cancel absolute -right-2 -top-3"
                 >
                     <Image

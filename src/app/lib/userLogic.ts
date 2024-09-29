@@ -48,10 +48,4 @@ export async function userRegister(email: string, password: string, fullName: st
     } catch (error) {
         console.error(error)
     }
-    // console.log({
-    //     email,
-    //     password: password,
-    //     fullName: fullName,        
-    //     role,
-    // })
 }
