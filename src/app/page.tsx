@@ -1,6 +1,5 @@
 "use client";
 import { useState } from 'react';
-// import { toast } from 'sonner';
 import Image from 'next/image';
 import forwardButton from '@/app/ui/assets/chevron-right.svg'
 import heroImg from '@/app/ui/assets/Rectangle 5.svg'

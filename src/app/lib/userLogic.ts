@@ -16,7 +16,7 @@ export async function userLogIn(email: string, password: string){
                 })
             })
     
-            return loginStatus
+            console.log(loginStatus.json())
     
         } catch (error) {
             console.error(error)
@@ -36,6 +36,7 @@ export async function userRegister(email: string, password: string, fullName: st
             //     "Content-Type": "application/json",
             // },            
             body: JSON.stringify({
+                mode: "signUp",
                 email,
                 password: password,
                 fullName: fullName,        
@@ -43,7 +44,7 @@ export async function userRegister(email: string, password: string, fullName: st
             })
         })
 
-        console.log(registerUser)
+        console.log(registerUser.json())
 
     } catch (error) {
         console.error(error)

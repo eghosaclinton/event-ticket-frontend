@@ -1,4 +1,3 @@
-"use client"
 import Image from "next/image";
 import msgIcon from "@/app/ui/assets/Group 216.svg"
 import phoneIcon from "@/app/ui/assets/Icon awesome-phone-alt.svg"

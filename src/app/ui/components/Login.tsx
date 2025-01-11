@@ -23,15 +23,17 @@ export default function Login(){
 
         const {userEmail, userPassword} = logInData;
 
-        toast.promise(async()=>await userLogIn(userEmail, userPassword), {
-            loading: 'Loading...',
-            success: () => {
-              return `Login Success`;
-            },
-            error: 'Error',
-        })
-        const data = userLogIn(userEmail, userPassword).then(data=>data?.json)
-        console.log(data)
+        userLogIn(userEmail, userPassword)
+
+        // toast.promise(async()=>await userLogIn(userEmail, userPassword), {
+        //     loading: 'Loading...',
+        //     success: () => {
+        //       return `Login Success`;
+        //     },
+        //     error: 'Error',
+        // })
+        // const data = userLogIn(userEmail, userPassword).then(data=>data?.json)
+        // console.log(data)
     }
 
     function handleChange(target: HTMLInputElement){
