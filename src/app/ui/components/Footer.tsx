@@ -1,16 +1,19 @@
-import Image from "next/image";
-import msgIcon from "@/app/ui/assets/Group 216.svg"
-import phoneIcon from "@/app/ui/assets/Icon awesome-phone-alt.svg"
-import calenderIcon from "@/app/ui/assets/Icon ionic-md-calendar.svg"
-import clockIcon from "@/app/ui/assets/Icon feather-clock.svg"
-import locationIcon from "@/app/ui/assets/map-pin.svg"
-import Link from "next/link";
+import Image from 'next/image'
+import msgIcon from '@/app/ui/assets/message-icon.svg'
+import phoneIcon from '@/app/ui/assets/Icon awesome-phone-alt.svg'
+import calenderIcon from '@/app/ui/assets/Icon ionic-md-calendar.svg'
+import clockIcon from '@/app/ui/assets/Icon feather-clock.svg'
+import locationIcon from '@/app/ui/assets/map-pin.svg'
+import Link from 'next/link'
 
-export default function Footer(){
+export default function Footer() {
     return (
         <footer className="bg-[#04092C] p-10">
             <div className=" w-[85%] mx-auto my-0 flex items-center justify-between text-white">
-                <h2 className="logo text-white font-bold text-4xl" style={{fontFamily: 'monospace'}}>
+                <h2
+                    className="logo text-white font-bold text-4xl"
+                    style={{ fontFamily: 'monospace' }}
+                >
                     <span className="text-blue-400">S</span>napEvent
                 </h2>
 
@@ -19,7 +22,7 @@ export default function Footer(){
                     <Link href={''}>About Us</Link>
                     <Link href={''}>Blog</Link>
                     <Link href={''}>Trending Events</Link>
-                    <Link href={''}>Categories</Link>                
+                    <Link href={''}>Categories</Link>
                 </nav>
 
                 <ul className="contact--info font-light text-sm w-1/3 flex gap-3 flex-col">
@@ -61,5 +64,5 @@ export default function Footer(){
                 </ul>
             </div>
         </footer>
-    );
+    )
 }

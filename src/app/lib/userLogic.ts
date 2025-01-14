@@ -1,51 +1,57 @@
-function userOnBoard(){
-        console.log('userOnboarded')
+function userOnBoard() {
+    console.log('userOnboarded')
 }
 
-export async function userLogIn(email: string, password: string){
-
-        try {
-            const loginStatus = await fetch(`https://ticket-backend-92mj.onrender.com/api/user/login`, {
-                method: "POST",
+export async function userLogIn(email: string, password: string) {
+    try {
+        const loginStatus = await fetch(
+            `https://ticket-backend-92mj.onrender.com/api/user/login`,
+            {
+                method: 'POST',
                 headers: {
-                    "Content-Type": "application/json",
-                },            
+                    'Content-Type': 'application/json',
+                },
                 body: JSON.stringify({
                     email,
                     password,
-                })
-            })
-    
-            console.log(loginStatus.json())
-    
-        } catch (error) {
-            console.error(error)
-        }
-        userOnBoard()
+                }),
+            }
+        )
+
+        console.log(loginStatus.json())
+    } catch (error) {
+        console.error(error)
+    }
+    userOnBoard()
 }
 
-export function userLogOut(){
-    
-}
+export function userLogOut() {}
 
-export async function userRegister(email: string, password: string, fullName: string, role: string){
+export async function userRegister(
+    email: string,
+    password: string,
+    fullName: string,
+    role: string
+) {
     try {
-        const registerUser = await fetch(`https://ticket-backend-92mj.onrender.com/api/user/register`, {
-            method: "POST",
-            // headers: {
-            //     "Content-Type": "application/json",
-            // },            
-            body: JSON.stringify({
-                mode: "signUp",
-                email,
-                password: password,
-                fullName: fullName,        
-                role,
-            })
-        })
+        const registerUser = await fetch(
+            `https://ticket-backend-92mj.onrender.com/api/user/register`,
+            {
+                method: 'POST',
+                // headers: {
+                //     "Content-Type": "application/json",
+                // },
+                body: JSON.stringify({
+                    mode: 'signUp',
+                    email,
+                    password: password,
+                    fullName: fullName,
+                    role,
+                }),
+            }
+        )
 
         console.log(registerUser.json())
-
     } catch (error) {
         console.error(error)
     }
