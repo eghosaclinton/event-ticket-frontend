@@ -1,9 +1,9 @@
-import type { Metadata } from 'next'
+import { type Metadata } from 'next'
 import { Toaster } from 'sonner'
 import { Montserrat } from 'next/font/google'
-import './globals.css'
 import Header from './ui/components/Header'
 import Footer from './ui/components/Footer'
+import './globals.css'
 
 const montserrat = Montserrat({ subsets: ['latin'] })
 
@@ -12,20 +12,21 @@ export const metadata: Metadata = {
     description: 'Book tickets. Attend Events.',
 }
 
-type Layout = {
+export default function RootLayout({
+    children,
+}: Readonly<{
     children: React.ReactNode
-    searchParams: Promise<{ login: boolean; register: boolean }>
-}
-
-export default function RootLayout({ children }: Readonly<Layout>) {
+}>) {
     return (
         <html lang="en">
             <body
-                className={`${montserrat.className} flex flex-col gap-4 min-h-screen`}
+                className={`${montserrat.className} m-0 p-0 antialiased `}
             >
                 <Header />
-                <main>{children}</main>
-                <Toaster />
+                <main className='mt-4'>
+                    {children}                    
+                </main>    
+                <Toaster />            
                 <Footer />
             </body>
         </html>

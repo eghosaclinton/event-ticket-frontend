@@ -3,7 +3,6 @@ import { useRouter } from 'next/navigation'
 import { useState } from 'react'
 import { toast } from 'sonner'
 import { LogInSchema } from './schema'
-import { revalidatePath } from 'next/cache'
 
 export type State = {
     errors?: {
@@ -59,7 +58,7 @@ export const useLogin = () => {
             })
 
             setIsPending(false)
-            console.log('huh')
+            push('/')
             refresh()
         } catch (error) {
             setIsPending(false)

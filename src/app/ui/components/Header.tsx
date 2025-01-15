@@ -3,10 +3,8 @@ import UserProfile from './nav/Profile'
 
 export default async function NavBar() {
     const session = await auth()
-    // console.log(session?.user)
     return (
         <header className="bg-[#04092C] p-6">
-            <p>{session?.user.fullName}</p>
             <div className="header-text w-[85%] mx-auto my-0 flex flex-col gap-4">
                 <div className="header-top flex justify-between">
                     <h2

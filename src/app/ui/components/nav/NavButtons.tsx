@@ -7,16 +7,16 @@ export default function NavButtons() {
     const { push } = useRouter()
 
     function handleParams(target: HTMLButtonElement) {
-        const {id} = target
+        const { id } = target
         const params = new URLSearchParams(searchParams)
 
-        params.set("auth", id)
+        params.set('auth', id)
 
         push(`${pathName}?${params.toString()}`)
     }
 
     return (
-        <div className="nav--buttons">
+        <div className="nav--buttons flex gap-2">
             <button
                 id="login"
                 onClick={(e) => handleParams(e.currentTarget)}
